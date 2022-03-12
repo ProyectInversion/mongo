@@ -1,6 +1,6 @@
 module.exports = 
 {
-    SERVIDOR:'localhost',
+    SERVIDOR:'mongo_server',
     PUERTO_BD:27017,
     NAME_DATABASE:'inversion'
 }

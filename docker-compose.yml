@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  cliente_mongo: 
+    container_name: node_mongo
+    restart: always
+    build: .
+    depends_on:
+      - sql_server
+    ports:
+      - 2000:2100
+  mongo_server:
+    container_name: mdb_inversion
+    image: mongo
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: AX12345
+      ME_CONFIG_MONGODB_URL: mongodb://mongo_server:27017/
+    logging:
+      driver: none
+    
+    
